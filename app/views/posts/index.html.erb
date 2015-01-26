@@ -1,0 +1,32 @@
+<div class = "container-fluid">
+	<%= column_chart((@hash), {"library": {"hAxis": {"title": "Date of Gout Attack"}, "vAxis": {"title": "Duration: # of Days"}}} ) %>
+
+
+<%= link_to "Create Post", new_post_path %>
+
+  <div class = "row">
+
+   <div id="post-content" class="col-xs-2"></div>
+
+   <div id="post-content" class="col-xs-8">
+	<% @posts.reverse.each do |post| %>
+
+		<div>
+			<h3><strong><%= link_to post.title, post %></strong></h3>
+				<p><%= post.body %></p>
+			<small><%= post.date_published %></small>
+				<p><%= image_tag("beer.png") if post.beer? %>
+				<%= image_tag("thick16.png") if post.beef? %>
+				<%= image_tag("mushroom.png") if post.mushroom? %>
+				<%= image_tag("softdrinks1-2.png") if post.softdrink? %>
+				<%= image_tag("octopus.png") if post.octopus? %>
+				<%= image_tag("sausage3.png") if post.sausage? %>
+				</p>
+		</div>
+	<% end %>
+   </div>
+
+   <div id="post-content" class="col-xs-2"></div>
+
+  </div>
+</div>

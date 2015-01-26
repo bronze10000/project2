@@ -1,0 +1,65 @@
+<div class = "container-fluid">
+
+	<h1 class="jumbotron text-center" >Welcome to Gouts App</h1>
+<%# 	<%= link_to(image_tag("/assets/gout.jpg", :alt "gout"))  %>
+
+<%# <%= image_tag 'gout.jpg' %>
+<h3>New Posts:</h3>
+
+
+<% @post.errors.full_messages %>
+
+	<div class="row">
+      <div id="post-content" class="col-xs-6">
+		<%= form_for(@post) do |f| %>
+			Title:
+			<%= f.text_field  :title %><br>
+			Body:
+			<%= f.text_area :body, size: "40x10" %><br>
+			Duration of Gout Attack:
+			<%= f.number_field :duration %><br>
+			Date of Attack:
+			<%= f.date_field :date %><br>
+			
+	  </div>
+
+	  <div id="data-content" class="col-xs-6">
+	  	
+	  	Gout triggers:
+			<div class="field">
+	    		<%= f.label "beer" %>
+	    		<%= f.check_box :beer %> <br>
+			</div>
+
+			<div class="field">
+	    		<%= f.label "beef" %>
+	    		<%= f.check_box :beef %> <br>
+			</div>
+
+			<div class="field">
+	    		<%= f.label "mushroom" %>
+	    		<%= f.check_box :mushroom %> <br>
+			</div>
+
+			<div class="field">
+	    		<%= f.label "softdrink" %>
+	    		<%= f.check_box :softdrink %> <br>
+			</div>
+
+			<div class="field">
+	    		<%= f.label "octopus" %>
+	    		<%= f.check_box :octopus %> <br>
+			</div>
+
+			<div class="field">
+	    		<%= f.label "sausage" %>
+	    		<%= f.check_box :sausage %> <br>
+			</div>
+
+
+			<%= f.submit "Create Post", class: "btn btn-success btn-lg" %>
+		<% end %>
+
+
+
+</div>

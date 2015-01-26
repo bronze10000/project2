@@ -1,0 +1,20 @@
+
+<div class = "container-fluid">
+<h1 class = "jumbotron text-center">Join the community!</h1>
+
+<%= form_for @user do |f| %>
+  <p>First Name</p>
+  <%= f.text_field :first_name %>
+  <p>Last Name</p>
+  <%= f.text_field :last_name %>
+  <p>Username</p>
+  <%= f.text_field :username %>
+  <p>Password</p>
+  <%= f.password_field :password %>
+  <p>Please confirm.</p>
+  <%= f.password_field :password_confirmation %>
+  <%= f.submit 'Join!' %>
+<% end %>
+
+
+</div>
